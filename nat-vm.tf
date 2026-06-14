@@ -16,7 +16,7 @@ resource "yandex_compute_instance" "nat-instance" {
   resources {
     core_fraction = 20
     cores         = 2
-    memory        = 4
+    memory        = 2
   }
 
   boot_disk {
