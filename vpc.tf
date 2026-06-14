@@ -33,6 +33,14 @@ resource "yandex_vpc_subnet" "private-subnet-2" {
   route_table_id = yandex_vpc_route_table.nat-instance-route.id
 }
 
+resource "yandex_vpc_subnet" "private-subnet-3" {
+  name           = "private-subnet-3"
+  zone           = "ru-central1-d"
+  network_id     = yandex_vpc_network.netology.id
+  v4_cidr_blocks = ["192.168.23.0/24"]
+  route_table_id = yandex_vpc_route_table.nat-instance-route.id
+}
+
 resource "yandex_vpc_route_table" "nat-instance-route" {
   name       = "nat-instance-route"
   network_id = yandex_vpc_network.netology.id
