@@ -1,16 +1,19 @@
 ###cloud vars
 variable "key_file" {
   type        = string
+  default     = "/etc/credentials/service-account.json"
 }
 
 variable "cloud_id" {
   type        = string
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
+  default     = "${TF_CLOUD_ID}"
 }
 
 variable "folder_id" {
   type        = string
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
+  default     = "${TF_FOLDER_ID}"
 }
 
 variable "sa_name" {
